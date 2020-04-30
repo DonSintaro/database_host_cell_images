@@ -8,6 +8,11 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+app.get("/", function(req,res){
+    res.send("database server");
+});
+
 app.get("/api/awaken", function(req, res) {
     res.send("awake");
 });
