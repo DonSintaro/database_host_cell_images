@@ -21,7 +21,10 @@ app.get("/api/awaken", function(req, res) {
 app.get("/api/create/:name", function(req, res) {
     let buffer = req.params.name;
     console.log(buffer);
-    db.create(buffer).then(function(){
+    
+    let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + buffer +".jpg, neutrophil";
+
+    db.create(cellLink).then(function(){
         res.send("Success");
     });
 });
