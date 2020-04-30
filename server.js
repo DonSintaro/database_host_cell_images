@@ -21,7 +21,7 @@ app.post("/api/create/:name", function(req, res) {
     let buffer = req.params.name;
     console.log(buffer);
 
-    let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + buffer +".jpg, neutrophil";
+    let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + buffer +", neutrophil";
 
     db.create(cellLink).then(function(){
         res.send("Success");
