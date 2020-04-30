@@ -28,20 +28,13 @@ app.get("/api/awaken", function(req, res) {
 //     });
 // });
 
-app.post("/api/create/:name", async function({body}, res) {
+app.post("/api/create", async function({body}, res) {
     
     let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + body +".jpg, neutrophil";
 
     db.create(cellLink).then(function(){
         res.send("Success");
     });
-});
-
-
-app.post("/api/create/:id", async function({params, body}, res){
-    
-    let data = await books.deleteBook(params,body)
-    res.send(data);
 });
 
 app.listen(PORT, function() {
