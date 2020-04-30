@@ -28,14 +28,6 @@ app.post("/api/create/:name", function(req, res) {
     });
 });
 
-// app.post("/api/create", async function({body}, res) {
-    
-//     let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + body +".jpg, neutrophil";
-
-//     db.create(cellLink).then(function(){
-//         res.send("Success");
-//     });
-// });
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
