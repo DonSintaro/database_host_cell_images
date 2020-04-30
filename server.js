@@ -17,25 +17,25 @@ app.get("/api/awaken", function(req, res) {
     res.send("awake");
 });
 
-// app.post("/api/create/:name", function(req, res) {
-//     let buffer = req.params.name;
-//     console.log(buffer);
+app.post("/api/create/:name", function(req, res) {
+    let buffer = req.params.name;
+    console.log(buffer);
 
-//     let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + buffer +".jpg, neutrophil";
-
-//     db.create(cellLink).then(function(){
-//         res.send("Success");
-//     });
-// });
-
-app.post("/api/create", async function({body}, res) {
-    
-    let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + body +".jpg, neutrophil";
+    let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + buffer +".jpg, neutrophil";
 
     db.create(cellLink).then(function(){
         res.send("Success");
     });
 });
+
+// app.post("/api/create", async function({body}, res) {
+    
+//     let cellLink = "gs://cell-image-project.appspot.com/Cells/Neutrophils/" + body +".jpg, neutrophil";
+
+//     db.create(cellLink).then(function(){
+//         res.send("Success");
+//     });
+// });
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
